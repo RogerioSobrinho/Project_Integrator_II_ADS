@@ -4,6 +4,11 @@
  * and open the template in the editor.
  */
 package br.com.views;
+import br.com.views.ProdutosCadastro;
+import br.com.views.ClientesCadastro;
+import java.awt.Dimension;
+import javax.swing.JFrame;
+import javax.swing.JInternalFrame;
 
 /**
  *
@@ -11,11 +16,15 @@ package br.com.views;
  */
 public class Menu extends javax.swing.JFrame {
 
+    private ProdutosCadastro produtoCadastro = null;
+    private ClientesCadastro clienteCadastro = null;
     /**
      * Creates new form Principal
      */
     public Menu() {
         initComponents();
+        //Faz com que a janela seja aberta no meio da tela
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -27,13 +36,10 @@ public class Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        btnProdutoMenu = new javax.swing.JMenuItem();
+        btnClienteMenu = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
@@ -46,42 +52,24 @@ public class Menu extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(500, 500));
         setResizable(false);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(153, 204, 255), new java.awt.Color(204, 204, 204)));
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        jLabel1.setText("SoftInformatica");
-
-        jLabel2.setText("Versão 27.04.18");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel2))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(250, 250, 250)
-                .addComponent(jLabel1)
-                .addContainerGap(252, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(35, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(26, 26, 26)
-                .addComponent(jLabel2))
-        );
-
         jMenu1.setText("Cadastro");
 
-        jMenuItem1.setText("Produto");
-        jMenu1.add(jMenuItem1);
+        btnProdutoMenu.setText("Produto");
+        btnProdutoMenu.setName("btnProduto"); // NOI18N
+        btnProdutoMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnProdutoMenuActionPerformed(evt);
+            }
+        });
+        jMenu1.add(btnProdutoMenu);
 
-        jMenuItem2.setText("Cliente");
-        jMenu1.add(jMenuItem2);
+        btnClienteMenu.setText("Cliente");
+        btnClienteMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClienteMenuActionPerformed(evt);
+            }
+        });
+        jMenu1.add(btnClienteMenu);
 
         jMenuBar1.add(jMenu1);
 
@@ -101,17 +89,40 @@ public class Menu extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGap(0, 785, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 290, Short.MAX_VALUE))
+            .addGap(0, 413, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnProdutoMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProdutoMenuActionPerformed
+        // TODO add your handling code here:
+        
+        if (produtoCadastro == null || !produtoCadastro.isDisplayable()) {
+            produtoCadastro = new ProdutosCadastro();
+            produtoCadastro.pack();
+            produtoCadastro.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+            produtoCadastro.setLocationRelativeTo(null);
+            produtoCadastro.setVisible(true);
+        }
+        produtoCadastro.toFront();
+    }//GEN-LAST:event_btnProdutoMenuActionPerformed
+
+    private void btnClienteMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClienteMenuActionPerformed
+        // TODO add your handling code here:
+        if (clienteCadastro == null || !clienteCadastro.isDisplayable()) {
+            clienteCadastro = new ClientesCadastro();
+            clienteCadastro.pack();
+            clienteCadastro.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+            clienteCadastro.setLocationRelativeTo(null);
+            clienteCadastro.setVisible(true);
+        }
+        clienteCadastro.toFront();
+    }//GEN-LAST:event_btnClienteMenuActionPerformed
 
     /**
      * @param args the command line arguments
@@ -148,17 +159,14 @@ public class Menu extends javax.swing.JFrame {
             }
         });
     }
-
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JMenuItem btnClienteMenu;
+    private javax.swing.JMenuItem btnProdutoMenu;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

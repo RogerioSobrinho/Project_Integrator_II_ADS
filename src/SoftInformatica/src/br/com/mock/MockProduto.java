@@ -180,7 +180,7 @@ public class MockProduto {
     }
 
     //Procura um produto no mock, de acordo com o nome
-    //ou com o cnpj, passados como parâmetro
+    //ou com o ean, passados como parâmetro
     public static List<Produto> procurar(String valor)
             throws Exception {
         
@@ -196,7 +196,7 @@ public class MockProduto {
 
             //Se há valor para pesquisa e a lista não está vazia, vamos
             //percorrer a lista toda e encontrar produtos cujo nome e/ou
-            //cnpj contenham o parâmetro de valor informado no método.
+            //ean contenham o parâmetro de valor informado no método.
             //Quando um produto atender a estes critérios, o adicionamos na
             //lista auxiliar de resultados de pesquisa (listaResultado).
             //A busca deve ir até o final aqui, por isso não há flag de controle
@@ -207,14 +207,14 @@ public class MockProduto {
                 Produto produtoLista = listaProdutos.get(contadorPosicao);
 
                 //Verifica se há produto cadastrado corretamente nessa posição
-                //da lista e se o mesmo tem nome e/ou cnpj
+                //da lista e se o mesmo tem nome e/ou ean
                 if (produtoLista != null
                         && produtoLista.getNome() != null
-                        && produtoLista.getCnpj() != null) {
+                        && produtoLista.getEan() != null) {
 
                     //Caso o produto desta posição tenha dados cadastrados 
                     //corretamente, verifica se este possui nome ou
-                    //cnpj que contenham o valor fornecido como
+                    //ean que contenham o valor fornecido como
                     //parâmetro no método. Caso uma das afirmações seja
                     //verdadeira, adiciona este produto na lista de
                     //resultados.
@@ -224,7 +224,7 @@ public class MockProduto {
                     //digitar a pesquisa EXATAMENTE como está cadastrado
                     //para conseguir encontrar o cliente
                     if (produtoLista.getNome().contains(valor)
-                            || produtoLista.getCnpj().contains(valor)) {
+                            || produtoLista.getEan().contains(valor)) {
 
                         listaResultado.add(produtoLista);
 

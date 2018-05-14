@@ -14,7 +14,7 @@ import br.com.model.Clientes;
 //Validador dos dados do cliente
 public class ValidadorCliente {
 
-    public static String validar(Clientes cliente, Object id) {
+    public static String validar(Clientes cliente) {
 
         //Verifica se foi especificado um cliente
         if (cliente == null || "".equals(cliente)) {
