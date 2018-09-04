@@ -26,13 +26,6 @@ public class ValidadorProduto {
             return "É necessário informar o preço de venda do produto e não pode ser ZERO";
         }
         
-        //Verifica se o produto tem preço de custo
-        if (Float.toString(produto.getPrecoCusto()) == null
-                || "".equals(produto.getPrecoCusto())
-                || (produto.getPrecoCusto())<=0) {
-            return "É necessário informar o preço de custo do produto e não pode ser ZERO";
-        }
-        
         //Verifica se o produto tem quantidade informada
         if (String.valueOf(produto.getQuantidade()) == null
                 || "".equals(produto.getQuantidade())

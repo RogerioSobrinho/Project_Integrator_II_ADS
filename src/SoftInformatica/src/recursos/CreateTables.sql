@@ -1,0 +1,52 @@
+CREATE DATABASE PI2;
+
+USE PI2;
+
+CREATE TABLE Cliente(
+id INT NOT NULL AUTO_INCREMENT,
+nome VARCHAR(255) NOT NULL,
+sexo VARCHAR(35) NOT NULL,
+cpf varchar(15) NOT NULL,
+rg VARCHAR(30) NOT NULL,
+DataNasc DATE NOT NULL,
+cep char(15) NOT NULL,
+endereco VARCHAR(255) NOT NULL,
+numero INT NOT NULL,
+complemento VARCHAR(50) NOT NULL,
+cidade VARCHAR(50) NOT NULL,
+uf VARCHAR(2) NOT NULL,
+telefone varchar(30) NOT NULL,
+habilitado VARCHAR(1),
+PRIMARY KEY (id));
+
+CREATE TABLE Produto(
+id INT NOT NULL AUTO_INCREMENT,
+nome VARCHAR(255) NOT NULL,
+ean VARCHAR(70) NOT NULL,
+quantidade INT NOT NULL,
+descricao Text NOT NULL,
+fornecedor VARCHAR(255) NOT NULL,
+cnpj varchar(15) NOT NULL,
+precoVenda FLOAT NOT NULL,
+categoria VARCHAR(50) NOT NULL,
+habilitado VARCHAR(1) NOT NULL,
+PRIMARY KEY (id)
+);
+
+CREATE TABLE Vendas(
+idVenda INT NOT NULL AUTO_INCREMENT,
+idCliente INT NOT NULL,
+total FLOAT NOT NULL,
+dataVenda DATE NOT NULL,
+PRIMARY KEY (idVenda),
+FOREIGN KEY (IdCliente) REFERENCES Cliente(id));
+
+CREATE TABLE ItemVendas(
+idItem INT NOT NULL AUTO_INCREMENT,
+idVenda INT NOT NULL,
+idProduto INT NOT NULL,
+qtde INT NOT NULL,
+precoVendido FLOAT NOT NULL,
+PRIMARY KEY (idItem, idVenda),
+FOREIGN KEY (idVenda) REFERENCES Vendas(idVenda),
+FOREIGN KEY (idProduto) REFERENCES Produto(id));

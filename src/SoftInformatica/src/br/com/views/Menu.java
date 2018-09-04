@@ -18,6 +18,10 @@ public class Menu extends javax.swing.JFrame {
 
     private ProdutosCadastro produtoCadastro = null;
     private ClientesCadastro clienteCadastro = null;
+    private ClientesConsulta clienteConsulta = null;
+    private ProdutosConsulta produtoConsulta = null;
+    private Vendas vendas = null;
+    private RelatorioConsulta relatorio = null;
     /**
      * Creates new form Principal
      */
@@ -36,11 +40,18 @@ public class Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         btnProdutoMenu = new javax.swing.JMenuItem();
         btnClienteMenu = new javax.swing.JMenuItem();
+        jMenu4 = new javax.swing.JMenu();
+        btnProdutoMenu1 = new javax.swing.JMenuItem();
+        btnClienteMenu1 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
+        btnProdutoMenu2 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
 
@@ -51,6 +62,34 @@ public class Menu extends javax.swing.JFrame {
         setIconImages(null);
         setMinimumSize(new java.awt.Dimension(500, 500));
         setResizable(false);
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jLabel1.setText("SoftInformática");
+
+        jLabel2.setText("O sistema perfeito para gestão do seu négocio");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(250, 250, 250)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel1))
+                .addContainerGap(259, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(140, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2)
+                .addGap(101, 101, 101))
+        );
 
         jMenu1.setText("Cadastro");
 
@@ -73,12 +112,48 @@ public class Menu extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Faturamento");
+        jMenu4.setText("Consulta");
+
+        btnProdutoMenu1.setText("Produto");
+        btnProdutoMenu1.setName("btnProduto"); // NOI18N
+        btnProdutoMenu1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnProdutoMenu1ActionPerformed(evt);
+            }
+        });
+        jMenu4.add(btnProdutoMenu1);
+
+        btnClienteMenu1.setText("Cliente");
+        btnClienteMenu1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClienteMenu1ActionPerformed(evt);
+            }
+        });
+        jMenu4.add(btnClienteMenu1);
+
+        jMenuBar1.add(jMenu4);
+
+        jMenu2.setText("Venda");
+
+        btnProdutoMenu2.setText("Vendas");
+        btnProdutoMenu2.setName("btnProduto"); // NOI18N
+        btnProdutoMenu2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnProdutoMenu2ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(btnProdutoMenu2);
+
         jMenuBar1.add(jMenu2);
 
         jMenu3.setText("Relatório");
 
         jMenuItem3.setText("Vendas");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem3);
 
         jMenuBar1.add(jMenu3);
@@ -89,11 +164,13 @@ public class Menu extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 785, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 413, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -123,6 +200,53 @@ public class Menu extends javax.swing.JFrame {
         }
         clienteCadastro.toFront();
     }//GEN-LAST:event_btnClienteMenuActionPerformed
+
+    private void btnProdutoMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProdutoMenu1ActionPerformed
+        // TODO add your handling code here:
+        if (produtoConsulta == null || !produtoConsulta.isDisplayable()) {
+            produtoConsulta = new ProdutosConsulta();
+            produtoConsulta.pack();
+            produtoConsulta.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+            produtoConsulta.setLocationRelativeTo(null);
+            produtoConsulta.setVisible(true);
+        }
+        clienteConsulta.toFront();
+    }//GEN-LAST:event_btnProdutoMenu1ActionPerformed
+
+    private void btnClienteMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClienteMenu1ActionPerformed
+        // TODO add your handling code here:
+        if (clienteConsulta == null || !clienteConsulta.isDisplayable()) {
+            clienteConsulta = new ClientesConsulta();
+            clienteConsulta.pack();
+            clienteConsulta.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+            clienteConsulta.setLocationRelativeTo(null);
+            clienteConsulta.setVisible(true);
+        }
+        clienteConsulta.toFront();
+    }//GEN-LAST:event_btnClienteMenu1ActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        if (relatorio == null || !relatorio.isDisplayable()) {
+            relatorio = new RelatorioConsulta();
+            relatorio.pack();
+            relatorio.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+            relatorio.setLocationRelativeTo(null);
+            relatorio.setVisible(true);
+        }
+        relatorio.toFront();
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void btnProdutoMenu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProdutoMenu2ActionPerformed
+        // TODO add your handling code here:
+        if (vendas == null || !vendas.isDisplayable()) {
+            vendas = new Vendas();
+            vendas.pack();
+            vendas.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+            vendas.setLocationRelativeTo(null);
+            vendas.setVisible(true);
+        }
+        vendas.toFront();
+    }//GEN-LAST:event_btnProdutoMenu2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -162,11 +286,18 @@ public class Menu extends javax.swing.JFrame {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem btnClienteMenu;
+    private javax.swing.JMenuItem btnClienteMenu1;
     private javax.swing.JMenuItem btnProdutoMenu;
+    private javax.swing.JMenuItem btnProdutoMenu1;
+    private javax.swing.JMenuItem btnProdutoMenu2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

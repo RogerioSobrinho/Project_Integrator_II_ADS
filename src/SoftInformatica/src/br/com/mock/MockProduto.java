@@ -1,18 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.com.mock;
 
 import br.com.model.Produto;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author rubens.huneke
- */
 public class MockProduto {
 
     //Sequência de IDs para cadastro de produtos    
@@ -70,14 +61,6 @@ public class MockProduto {
                             produtoAtualizacao.getNome()
                     );
 
-                    produtoLista.setPrecoVenda(
-                            produtoAtualizacao.getPrecoVenda()
-                    );
-                    
-                    produtoLista.setPrecoCusto(
-                            produtoAtualizacao.getPrecoCusto()
-                    );
-                    
                     produtoLista.setEan(
                             produtoAtualizacao.getEan()
                     );
@@ -94,20 +77,16 @@ public class MockProduto {
                             produtoAtualizacao.getFornecedor()
                     );
                     
+                    produtoLista.setPrecoVenda(
+                            produtoAtualizacao.getPrecoVenda()
+                    );
+                    
                     produtoLista.setCnpj(
                             produtoAtualizacao.getCnpj()
                     );
                     
-                    produtoLista.setNivel1(
-                            produtoAtualizacao.getNivel1()
-                    );
-                    
-                    produtoLista.setNivel2(
-                            produtoAtualizacao.getNivel2()
-                    );
-                    
-                    produtoLista.setNivel3(
-                            produtoAtualizacao.getNivel3()
+                    produtoLista.setCategoria(
+                            produtoAtualizacao.getCategoria()
                     );
 
                     //Configura a flag indicando que a atualização foi realizada

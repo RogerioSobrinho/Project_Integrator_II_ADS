@@ -1,19 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.com.controller;
 
 import java.util.List;
 import br.com.model.Clientes;
 import br.com.validador.ValidadorCliente;
-import br.com.mock.MockCliente;
+//import br.com.mock.MockCliente;
+import br.com.db.dao.DaoCliente;
 
-/**
- *
- * @author jose.ofbcarvalho
- */
 public class ServicoCliente {
 
     //Insere um cliente na fonte de dados
@@ -31,7 +23,8 @@ public class ServicoCliente {
             try {
 
                 //Realiza a chamada de inserção na fonte de dados
-                MockCliente.inserir(cliente);
+                //MockCliente.inserir(cliente);
+                DaoCliente.inserir(cliente);
 
             } catch (Exception e) {
                 //Imprime qualquer erro técnico no console
@@ -63,7 +56,8 @@ public class ServicoCliente {
             try {
 
                 //Realiza a chamada de atualização na fonte de dados
-                MockCliente.atualiza(cliente);
+                //MockCliente.atualiza(cliente);
+                DaoCliente.atualizar(cliente);
 
             } catch (Exception e) {
 
@@ -87,7 +81,8 @@ public class ServicoCliente {
         try {
 
             //Solicita a fonte de dados a exclusão do cliente informado
-            MockCliente.excluir(id);
+            //MockCliente.excluir(id);
+            DaoCliente.excluir(id);
 
         } catch (Exception e) {
 
@@ -101,7 +96,7 @@ public class ServicoCliente {
     }
 
     //Realiza a pesquisa de um cliente por nome/sobrenome na fonte de dados
-    public static List<Clientes> procurarCliente(String nome) {
+    public static List<Clientes> procurarCliente(String nome, String cpf) {
 
         //Declara uma variável para armazenar a resposta da fonte de dados
         List<Clientes> listaResposta = null;
@@ -109,10 +104,11 @@ public class ServicoCliente {
         try {
 
             //Verifica se um parâmetro de pesquisa não foi informado.
-            if (nome == null || "".equals(nome)) {
-                listaResposta = MockCliente.listar();
+            if ((nome == null || "".equals(nome)) && (cpf == null || "".equals(cpf)) ) {
+                //listaResposta = MockCliente.listar();
+                listaResposta = DaoCliente.listar();
             } else {
-                listaResposta = MockCliente.procurar(nome);
+                listaResposta = DaoCliente.procurar(nome,cpf);
             }
 
         } catch (Exception e) {
@@ -135,7 +131,8 @@ public class ServicoCliente {
         try {
 
             //Retorna o cliente obtido com a fonte de dados
-            clienteResposta = MockCliente.obter(id);
+            //clienteResposta = MockCliente.obter(id);
+            clienteResposta = DaoCliente.obter(id);
 
         } catch (Exception e) {
 

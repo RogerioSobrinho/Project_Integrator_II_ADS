@@ -1,19 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.com.controller;
 
-import br.com.mock.MockProduto;
+//import br.com.mock.MockProduto;
 import br.com.model.Produto;
 import br.com.validador.ValidadorProduto;
 import java.util.List;
-
-/**
- *
- * @author rubens.fhuneke
- */
+import br.com.db.dao.DaoProduto;
 
 //Classe de serviço de produto
 public class ServicoProduto {
@@ -41,7 +32,8 @@ public class ServicoProduto {
                 //Realiza a chamada de inserção na fonte de dados,
                 //passando o produto fornecido como parâmetro na chamada
                 //do serviço para ser inserido na fonte de dados
-                MockProduto.inserir(produto);
+                //MockProduto.inserir(produto);
+                DaoProduto.inserir(produto);
 
             } catch (Exception e) {
                 //Imprime qualquer erro técnico no console e devolve
@@ -79,7 +71,8 @@ public class ServicoProduto {
             try {
 
                 //Realiza a chamada de atualização na fonte de dados
-                MockProduto.atualizar(produto);
+                //MockProduto.atualizar(produto);
+                DaoProduto.atualizar(produto);
 
             } catch (Exception e) {
 
@@ -106,7 +99,8 @@ public class ServicoProduto {
         try {
 
             //Solicita a fonte de dados a exclusão do produto informado
-            MockProduto.excluir(id);
+            //MockProduto.excluir(id);
+            DaoProduto.excluir(id);
 
         } catch (Exception e) {
             
@@ -137,13 +131,21 @@ public class ServicoProduto {
             //Caso contrário, realiza uma pesquisa com o parâmetro fornecido
             
             if (nome == null || "".equals(nome)) {
-                listaResposta = MockProduto.listar();
-            } else if (ean == null || "".equals(ean)) {
-                listaResposta = MockProduto.listar();
-            }else if (ean != "") {
-                listaResposta = MockProduto.procurar(ean);
-            }else {
-                listaResposta = MockProduto.procurar(nome);
+                //listaResposta = MockProduto.listar();
+                listaResposta = DaoProduto.listar();
+//            } else if (ean == null || "".equals(ean)) {
+//                listaResposta = MockProduto.listar();
+//            }else if (ean != "") {
+//                listaResposta = MockProduto.procurar(ean);
+            }
+            else {
+                if(nome != null){
+                    //listaResposta = MockProduto.procurar(nome);
+                    listaResposta = DaoProduto.procurar(nome);
+                } else {
+                 //   listaResposta = MockProduto.procurar(ean);
+                    listaResposta = DaoProduto.procurar(ean);
+                }
             }
 
         } catch (Exception e) {
@@ -171,7 +173,8 @@ public class ServicoProduto {
         try {
 
             //Retorna o produto obtido com a fonte de dados
-            produtoResposta = MockProduto.obter(id);
+            //produtoResposta = MockProduto.obter(id);
+            produtoResposta = DaoProduto.obter(id);
 
         } catch (Exception e) {
             

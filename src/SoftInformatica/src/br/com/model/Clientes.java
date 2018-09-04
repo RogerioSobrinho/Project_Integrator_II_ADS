@@ -1,48 +1,24 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.com.model;
 
 import java.util.Date;
 
-/**
- *
- * @author Otavio
- */
 public class Clientes {
 
     private Integer id;
     private String nome;
-    private String sexo;
     private String cpf;
     private String rg;
+    private String sexo;
     private Date DataNasc;
     private String cep;
     private String endereco;
     private Integer numero;
     private String complemento;
     private String cidade;
+    private String uf;
     private String telefone;
-    private String celular;
-
-    public Clientes(Integer id, String nome, String genero, String cpf, String rg, Date DataNasc, String cep, String endereco, String complemento, Integer numero, String cidade, String telefone, String celular) {
-        this.id = id;
-        this.nome = nome;
-        this.sexo = genero;
-        this.cpf = cpf;
-        this.rg = rg;
-        this.DataNasc = DataNasc;
-        this.cep = cep;
-        this.endereco = endereco;
-        this.complemento = complemento;
-        this.numero = numero;
-        this.cidade = cidade;
-        this.telefone = telefone;
-        this.celular = celular;
-    }
-
+    private Boolean habilitado;
+    
     public Integer getId() {
         return id;
     }
@@ -58,7 +34,15 @@ public class Clientes {
     public void setNome(String nome) {
         this.nome = nome;
     }
+    
+    public String getUF() {
+        return uf;
+    }
 
+    public void setUF(String uf) {
+        this.uf = uf;
+    }
+    
     public String getSexo() {
         return sexo;
     }
@@ -66,13 +50,13 @@ public class Clientes {
     public void setSexo(String sexo) {
         this.sexo = sexo;
     }
-
+    
     public String getCpf() {
         return cpf;
     }
 
     public void setCpf(String cpf) {
-        this.cpf = cpf;
+        this.cpf = cpf.replace(".","").replace(".","").replace("-","");
     }
 
     public String getRg() {
@@ -80,7 +64,7 @@ public class Clientes {
     }
 
     public void setRg(String rg) {
-        this.rg = rg;
+        this.rg = rg.replace(".","").replace(".","").replace("-","");
     }
 
     public Date getDataNasc() {
@@ -138,14 +122,12 @@ public class Clientes {
     public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
-
-    public String getCelular() {
-        return celular;
+    
+    public Boolean getHabilitado() {
+        return habilitado;
     }
 
-    public void setCelular(String celular) {
-        this.celular = celular;
+    public void setHabilitado(Boolean habilitado) {
+        this.habilitado = habilitado;
     }
-
-
 }

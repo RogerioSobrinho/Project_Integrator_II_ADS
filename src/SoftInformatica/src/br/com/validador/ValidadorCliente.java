@@ -20,12 +20,7 @@ public class ValidadorCliente {
         if (cliente == null || "".equals(cliente)) {
             return "Campo cliente é obrigatório";
         }
-
-        //Verifica se o id foi informado
-        if (cliente.getId() == null || "".equals(cliente.getId())) {
-            return "É necessário informar o id";
-        }
-
+        
         //Verifica se o nome foi informado
         if (cliente.getNome() == null || "".equals(cliente.getNome())) {
             return "É necessário informar o nome";
@@ -73,11 +68,6 @@ public class ValidadorCliente {
         //Verifica se o telefone foi informado
         if (cliente.getTelefone() == null || "".equals(cliente.getTelefone())) {
             return "É necessário informar o telefone";
-        }
-
-        //Verifica se foi informado o telefone celular
-        if (cliente.getCelular() == null || "".equals(cliente.getCelular())) {
-            return "É necessário informar um número celular";
         }
 
         //retorna null se todos os campos estiverem corretos

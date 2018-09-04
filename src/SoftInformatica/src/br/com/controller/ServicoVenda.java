@@ -1,22 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.com.controller;
 
-import br.com.mock.MockVenda;
 import br.com.model.Venda;
 import br.com.validador.ValidadorVenda;
+import br.com.db.dao.DaoVenda;
 
-/**
- *
- * @author mario.agjunior
- */
 public class ServicoVenda {
     
     //Insere uma venda na fonte de dados
-    public static String registrarVenda (Venda venda){
+    public static String registrarVenda (Venda venda, Float valorTotal){
         
         //variavel para armazenar a resposta do validador
         String resposta = null;
@@ -38,7 +29,8 @@ public class ServicoVenda {
                 //Realiza a chamada de inserção na fonte de dados,
                 //passando a venda fornecida como parâmetro na chamada
                 //do serviço para ser inserida na fonte de dados
-                MockVenda.inserirVenda(venda);
+                //MockVenda.inserirVenda(venda);
+                DaoVenda.inserirVenda(venda, valorTotal);
 
             } catch (Exception e) {
                 //Imprime qualquer erro técnico no console e devolve

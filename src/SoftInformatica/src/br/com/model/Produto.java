@@ -1,8 +1,4 @@
-
-
 package br.com.model;
-
-// rubens.huneke
 
 //Classe de negócio de produto
 public class Produto {
@@ -10,19 +6,16 @@ public class Produto {
     //Atributos
     private Integer id;
     private String nome;
-    private Float precoVenda;
-    private Float precoCusto;
     private String ean;
-    private Integer quantidade;
+    private String categoria;
     private String descricao;
+    private Integer quantidade;
+    private Float precoVenda;
     private String fornecedor;
     private String cnpj;
-    private String nivel1;
-    private String nivel2;
-    private String nivel3;
-    
-    
+    private Boolean habilitado;
 
+    // Metodos
     public Integer getId() {
         return id;
     }
@@ -47,14 +40,6 @@ public class Produto {
         this.precoVenda = precoVenda;
     }
     
-    public float getPrecoCusto() {
-        return precoCusto;
-    }
-
-    public void setPrecoCusto(float precoCusto) {
-        this.precoCusto = precoCusto;
-    }
-
     public String getEan() {
         return ean;
     }
@@ -92,32 +77,22 @@ public class Produto {
     }
 
     public void setCnpj(String cnpj) {
-        this.cnpj = cnpj;
+        this.cnpj = cnpj.replace(".","").replace(".","").replace("/","").replace("-","");
     }
     
-    public String getNivel1() {
-        return nivel1;
+    public String getCategoria() {
+        return categoria;
     }
 
-    public void setNivel1(String nivel1) {
-        this.nivel1 = nivel1;
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
     }
     
-    public String getNivel2() {
-        return nivel2;
+    public Boolean getHabilitado() {
+        return habilitado;
     }
 
-    public void setNivel2(String nivel2) {
-        this.nivel2 = nivel2;
+    public void setHabilitado(Boolean habilitado) {
+        this.habilitado = habilitado;
     }
-    
-    public String getNivel3() {
-        return nivel3;
-    }
-
-    public void setNivel3(String nivel3) {
-        this.nivel3 = nivel3;
-    }
-
-    
 }

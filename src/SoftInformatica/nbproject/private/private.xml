@@ -3,9 +3,20 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/rogerio.asobrinho/Documents/NetBeansProjects/SoftInformatica/src/br/com/views/Menu.java</file>
-            <file>file:/C:/Users/rogerio.asobrinho/Documents/NetBeansProjects/SoftInformatica/src/br/com/views/ClientesConsulta.java</file>
-            <file>file:/C:/Users/rogerio.asobrinho/Documents/NetBeansProjects/SoftInformatica/src/br/com/views/ClientesCadastro.java</file>
+            <file>file:/E:/Downloads/Project_Integrator_II_ADS-master/Project_Integrator_II_ADS-master/src/SoftInformatica/src/br/com/controller/ServicoProduto.java</file>
+            <file>file:/E:/Downloads/Project_Integrator_II_ADS-master/Project_Integrator_II_ADS-master/src/SoftInformatica/src/br/com/views/ClientesConsulta.java</file>
+            <file>file:/E:/Downloads/Project_Integrator_II_ADS-master/Project_Integrator_II_ADS-master/src/SoftInformatica/src/br/com/views/RelatorioConsulta.java</file>
+            <file>file:/E:/Downloads/Project_Integrator_II_ADS-master/Project_Integrator_II_ADS-master/src/SoftInformatica/src/br/com/db/dao/DaoCliente.java</file>
+            <file>file:/E:/Downloads/Project_Integrator_II_ADS-master/Project_Integrator_II_ADS-master/src/SoftInformatica/src/br/com/views/ClientesCadastro.java</file>
+            <file>file:/E:/Downloads/Project_Integrator_II_ADS-master/Project_Integrator_II_ADS-master/src/SoftInformatica/src/br/com/views/Vendas.java</file>
+            <file>file:/E:/Downloads/Project_Integrator_II_ADS-master/Project_Integrator_II_ADS-master/src/SoftInformatica/src/br/com/controller/ServicoCliente.java</file>
+            <file>file:/E:/Downloads/Project_Integrator_II_ADS-master/Project_Integrator_II_ADS-master/src/SoftInformatica/src/br/com/model/Clientes.java</file>
+            <file>file:/E:/Downloads/Project_Integrator_II_ADS-master/Project_Integrator_II_ADS-master/src/SoftInformatica/src/br/com/controller/ServicoVenda.java</file>
+            <file>file:/E:/Downloads/Project_Integrator_II_ADS-master/Project_Integrator_II_ADS-master/src/SoftInformatica/src/br/com/controller/ServicoRelatorio.java</file>
+            <file>file:/E:/Downloads/Project_Integrator_II_ADS-master/Project_Integrator_II_ADS-master/src/SoftInformatica/src/br/com/db/dao/DaoRelatorio.java</file>
+            <file>file:/E:/Downloads/Project_Integrator_II_ADS-master/Project_Integrator_II_ADS-master/src/SoftInformatica/src/br/com/model/Relatorio.java</file>
+            <file>file:/E:/Downloads/Project_Integrator_II_ADS-master/Project_Integrator_II_ADS-master/src/SoftInformatica/src/br/com/db/dao/DaoProduto.java</file>
+            <file>file:/E:/Downloads/Project_Integrator_II_ADS-master/Project_Integrator_II_ADS-master/src/SoftInformatica/src/br/com/views/ProdutosConsulta.java</file>
         </group>
     </open-files>
 </project-private>

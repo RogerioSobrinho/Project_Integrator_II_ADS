@@ -1,18 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.com.mock;
 
 import java.util.ArrayList;
 import java.util.List;
 import br.com.model.Clientes;
 
-/**
- *
- * @author Otavio
- */
 public class MockCliente {
 
     //Sequência de IDs para cadastro de clientes    
@@ -74,6 +65,12 @@ public class MockCliente {
 
                     //Atualiza o cep
                     clienteLista.setCep(clienteAtualizacao.getCep());
+                                        
+                    //Atualiza a cidade
+                    clienteLista.setCidade(clienteAtualizacao.getCidade());
+                    
+                    //Atualiza a UF
+                    clienteLista.setUF(clienteAtualizacao.getUF());
                     
                     //Atualiza o complemento
                     clienteLista.setComplemento(clienteAtualizacao.getComplemento());
@@ -86,9 +83,6 @@ public class MockCliente {
 
                     //Atualiza o telefone
                     clienteLista.setTelefone(clienteAtualizacao.getTelefone());
-
-                    //Atualiza o celular
-                    clienteLista.setCelular(clienteAtualizacao.getCelular());
 
                     //Configura a flag indicando que a atualização foi realizada
                     clienteAtualizado = true;
